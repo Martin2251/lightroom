@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+// everything inside the wrapper here is shown
+// we can use props in our styled componets to modify our css
 const Wrapper = styled.div`
   position: absolute;
   left: ${(props) => (props.position === "left" ? "20px" : "380px")};
