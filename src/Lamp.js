@@ -1,6 +1,9 @@
+import React from "react";
+import styled from "styled-components";
+
 const Wrapper = styled.div`
   position: absolute;
-  left: ${(props) => (props.postion === "left" ? "20px" : "380px")};
+  left: ${(props) => (props.position === "left" ? "20px" : "380px")};
   top: 20px;
   background: ${(props) => (props.lampOn ? "orange" : "lightgrey")};
   width: 100px;
@@ -9,7 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const Lamp = ({ lampOn, position }) => (
-  <Wrapper lampOn={LampOn} position={position}>
+  <Wrapper lampOn={lampOn} position={position}>
     <div />
   </Wrapper>
 );

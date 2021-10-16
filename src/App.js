@@ -1,50 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import styled from "styled-components";
 
 import Lamp from "./Lamp";
-  import LightSwitch from "./LightSwitch";
+import LightSwitch from "./LightSwitch";
 
-  const Room = styled.div
-  postion: relative
-  width: 500px
+const Room = styled.div`
+  position: relative;
+  width: 500px;
   height: 500px;
   border: 10px solid black;
-  margin: 0 auto ;
+  margin: 0 auto;
+`;
 
 function App() {
-
-  //lamp one
+  //lamp one state, the right hand one set changes what it is showing to the user
   const [isLampOneOn, setIsLampOneOn] = useState(false);
 
   // lamp 2
-  const [isLampTwoOn, setIsLampTwoOne] = useState(true);
+  const [isLampTwoOn, setIsLampTwoOn] = useState(true);
 
-  const handlseSwitchOne = () => setIsLampOneOn(prev => !prev);
-  const handleSwitchTwo = () => setIsLampTwoOne(prev => !prev);
-
-
-
+  const handleLightSwitchOne = () => setIsLampOneOn((prev) => !prev);
+  const handleLightSwitchTwo = () => setIsLampTwoOn((prev) => !prev);
 
   return (
     <Room>
-      <Lamp lampOm = {isLampOneOn} postion="left" />
-      <Lamp lampOm = {isLampOneOn} postion="right" />
+      <Lamp lampOn={isLampOneOn} position="left" />
+      <Lamp lampOn={isLampTwoOn} position="right" />
       <LightSwitch
-      name="one"
-      callback={handlseSwitchOne}
-      switchOn= {isLampOneOn}
-      postion="left"
- />
-       <LightSwitch
-      name="two"
-      callback={handleSwitchTwo}
-      switchOn= {isLampTwoOn}
-      postion="right"
- />
-
+        name="one"
+        callback={handleLightSwitchOne}
+        switchOn={isLampOneOn}
+        position="left"
+      />
+      <LightSwitch
+        name="two"
+        callback={handleLightSwitchTwo}
+        switchOn={isLampTwoOn}
+        position="right"
+      />
     </Room>
-
-    </div>
   );
 }
 
