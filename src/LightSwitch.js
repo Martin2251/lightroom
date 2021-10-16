@@ -14,6 +14,8 @@ const Button = styled.button`
   cursor: Pointer;
 `;
 
+// call back is the one im sending in here
+// I'm also showing if the switch on or off using ? operator
 const LightSwitch = ({ callback, position, switchOn }) => (
   <Button onClick={callback} position={position}>
     {switchOn ? "On" : "Off"}
