@@ -13,15 +13,20 @@ const Room = styled.div`
 `;
 
 function App() {
-  //lamp one state, the right hand one set changes what it is showing to the user
+  //lamp one state, the right hand one set changes what it is showing to the user. we set the default in()
   const [isLampOneOn, setIsLampOneOn] = useState(false);
 
   // lamp 2
   const [isLampTwoOn, setIsLampTwoOn] = useState(true);
+  // we can have as many states as we want in here
 
+  // these are the two functions that are called when we click the lightswitch, this gets called with the orevious state
   const handleLightSwitchOne = () => setIsLampOneOn((prev) => !prev);
   const handleLightSwitchTwo = () => setIsLampTwoOn((prev) => !prev);
 
+  // the room component comes from styled components
+
+  //i have created two props here Lamp on prop i have also created a prop called position
   return (
     <Room>
       <Lamp lampOn={isLampOneOn} position="left" />
